@@ -25,9 +25,22 @@ pipeline {
                sh "terraform plan -out=tfplan -input=false"
              }
            }
+    //       stage('Approval') {
+    //         steps {
+    //           script {
+    //             def userInput = input(id: 'confirm', message: 'Apply Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Apply terraform', name: 'confirm'] ])
+    //     }
+    //   }
+    // }
+
            stage('Terraform Apply') {
              steps {
                  sh 'terraform apply --auto-approve -input=false tfplan'
+               }
+           }
+          stage('Terraform Destroy') {
+             steps {
+                 sh 'terraform destroy --auto-approve -input=false tfplan'
                }
            }
   }

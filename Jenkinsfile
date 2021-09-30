@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Terraform Init') {
       steps {
-        sh "eterraform init -input=false"
+        sh "terraform init -input=false"
       }
     
     stage('Terraform Plan') {

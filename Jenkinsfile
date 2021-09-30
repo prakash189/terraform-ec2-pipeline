@@ -7,13 +7,13 @@ pipeline {
 
   }
   stages {
-    // stage('checkout') {
-    //   steps {
+   stage('checkout') {
+     steps {
 
-    //     git branch: 'main', url: 'https://github.com/prakash189/terraform-ec2-pipeline.git'
+       git branch: 'main', url: 'https://github.com/prakash189/terraform-ec2-pipeline.git'
 
-    //       }
-    //     }
+         }
+       }
 
     stage('Terraform Init') {
      steps {

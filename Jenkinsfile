@@ -3,8 +3,22 @@ pipeline {
   environment {
     AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_KEY')
+  
+  tools
+    {
+       maven "M3"
+    }
+
   }
   stages {
+    stage('checkout') {
+      steps {
+
+        git branch: 'main', url: 'https://github.com/prakash189/terraform-ec2-pipeline.git'
+
+          }
+        }
+
     stage('Terraform Init') {
       steps {
         sh "terraform init -input=false"

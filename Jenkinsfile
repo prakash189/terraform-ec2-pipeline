@@ -15,11 +15,11 @@ pipeline {
          }
        }
 
-     stage('Terraform Init') {
-       steps {
-          sh "terraform init"
-     }
-    
+          stage('Terraform Init') {
+            steps {
+              sh "terraform init"
+            }
+          }
      //stage('Terraform Plan') {
     //   steps {
     //     sh "terraform plan -out=tfplan -input=false"

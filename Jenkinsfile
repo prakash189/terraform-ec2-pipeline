@@ -16,8 +16,9 @@ pipeline {
        }
 
     stage('Terraform Init') {
+     dir(‘dev’)
      steps {
-       sh "terraform init -input=false"
+       sh "terraform init"
      }
     
     // stage('Terraform Plan') {

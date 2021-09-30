@@ -25,12 +25,12 @@ pipeline {
                sh "terraform plan -out=tfplan -input=false"
              }
            }
-    // stage('Terraform Apply') {
-    //   steps {
-    //     input 'Apply Plan'
-    //     sh "terraform apply -input=false tfplan"
-    //   }
-    // }
+           stage('Terraform Apply') {
+             steps {
+               input 'Apply Plan'
+                 sh "terraform apply -input=false tfplan"
+               }
+           }
   }
 }
 

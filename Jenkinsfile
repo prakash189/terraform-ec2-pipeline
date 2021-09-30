@@ -1,6 +1,12 @@
 pipeline {
-  agent any
-  
+  parameters {
+    password (name: 'AKIARCJIKTQOA63XZZWP')
+    password (name: 'ids8CdP0PkygM0j68j91MqsbV3HnwRLLo7vEovQ2')
+  }
+  environment {
+    AWS_ACCESS_KEY_ID = "${params.AWS_ACCESS_KEY_ID}"
+    AWS_SECRET_ACCESS_KEY = "${params.AWS_SECRET_ACCESS_KEY}"
+  }
   stages {
     stage('Terraform Init') {
       steps {

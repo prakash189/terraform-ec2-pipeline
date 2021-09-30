@@ -38,11 +38,11 @@ pipeline {
                  sh 'terraform apply --auto-approve -input=false tfplan'
                }
            }
-          stage('Terraform Destroy') {
-             steps {
-                 sh 'terraform destroy --auto-approve -input=false'
-               }
-           }
+          // stage('Terraform Destroy') {
+          //    steps {
+          //        sh 'terraform destroy --auto-approve -input=false'
+          //      }
+          //  }
   }
 }
 
